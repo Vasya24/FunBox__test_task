@@ -20,6 +20,18 @@ module.exports = {
         },
       },
       {
+        test: /\.(woff(2)?|ttf|eot|otf\svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)/,
         loader: 'file-loader?name=src/img/[name].[ext]',
       },
