@@ -1,0 +1,111 @@
+$borderDefault: #249CCE;
+$selected: #D9196B;
+$hovered: #32A8E8;
+$disabled: #7c7c7c;
+$font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+%micePortions {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: bold;
+    color: #666666;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #cacaca;
+    background-image: url('../img/Pattern.png');
+    background-size: cover;
+}
+
+.header {
+    font-size: 2.25em;
+    color: #fff;
+    text-align: center;
+    filter: drop-shadow(0px 1px 0.5px #000000);
+    padding-top: 6.9vh
+  }
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: auto;
+    align-self: center;
+}
+
+.card {
+    box-sizing: border-box;
+    border: .25em solid $borderDefault;
+    inline-size: 22.22vw;
+    block-size: 60.53vh;
+    background-color: #fff;
+    overflow: hidden;  
+    .card_textbox {
+        display: flex;
+        flex-direction: column;
+        padding-left: 3.19vw;
+        padding-top: 2.5vh;
+      }
+    .card_description {
+        color: #666666;
+        font-family: $font;
+    }
+    .card_name {
+        font-family: $font;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #000;
+    }
+    .card_name__flavour {
+        font-size: 1.5rem;
+    }
+    .card_weight {
+        background-color: $borderDefault;
+        border-radius: 50%;
+        color: #fff;
+        position: relative;
+        bottom: 20.6vh;
+        left: 15.2vw;
+        z-index: 900;
+        inline-size: 5rem;
+        block-size: 5rem;
+        text-align: center;
+        .card_weight__number, .card_weight__kilo {
+            position: relative;
+            top: 20px;
+        }
+    }
+    .card_portions, .card_mice {
+        @extend %micePortions
+    }
+    .cat {
+        z-index: 50;
+        position: relative;
+        top: 5.5vh;
+        right: 1.75vw;
+    }
+    &:hover {
+        cursor: pointer;
+        border-color: $hovered;
+        .card_weight {
+            background-color: $hovered;
+        }
+    }
+    &.selected {
+        border-color: $selected;
+        .card_weight {
+            background-color: $selected;
+        }
+}
+    &.disabled {
+        filter: contrast(25%);
+        border-color: #7c7c7c;
+        .cat {
+            top: 3.3vh;
+        }
+    }
+}
