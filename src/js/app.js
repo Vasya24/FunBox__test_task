@@ -23,14 +23,26 @@ for (let i = 0; i < cards.length; i++) {
   };
 
   cards[i].addEventListener('click', onCardClick);
-
+  cards[i].addEventListener('mouseover', function() {
+    if (this.classList.contains('selected')) {
+      this.children[0].children[0].innerHTML = 'Котэ не одобряет?';
+      this.children[0].children[0].style.color = '#E52E7C'
+    } else if (this.classList.contains('selected') == false){
+      this.children[0].children[0].innerHTML = 'Сказочное заморское яство'
+      this.children[0].children[0].style.color = '#666666'
+    }
+  })
+  cards[i].addEventListener('mouseout', function() {
+    this.children[0].children[0].innerHTML = 'Сказочное заморское яство'
+    this.children[0].children[0].style.color = '#666666'
+  })
 }
 
 let buys = Array.from(document.getElementsByClassName('buy'));
-console.log(buys[0].parentNode.parentElement.children[0])
+
 for (let j=0; j<buys.length; j++) {
-  function onBuyClick() {
     let card = buys[j].parentNode.parentElement.children[0]
+    buys[j].addEventListener('click', () => {
     card.classList.toggle('selected');
     if (card.classList.contains('selected') && card.classList.contains('foie-gras') && card.classList.contains('disabled') == false) {
       card.parentElement.childNodes[3].innerHTML = 'Печень утки разварная с артишоками';
@@ -41,6 +53,5 @@ for (let j=0; j<buys.length; j++) {
     } else if (card.classList.contains('disabled') == false && card.classList.contains('selected') == false) {
       card.parentElement.childNodes[3].innerHTML = `Чего сидишь? Порадуй котэ, <p class="buy">купи</p>`
     };   
-  }
-  buys[j].addEventListener('click', onBuyClick)
+  })
 }

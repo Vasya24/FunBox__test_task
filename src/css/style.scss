@@ -1,13 +1,15 @@
+$simpleText: #666666;
 $borderDefault: #249CCE;
 $selected: #D9196B;
 $hovered: #32A8E8;
+$selectedHovered: #E52E7C;
 $disabled: #7c7c7c;
 $font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 %micePortions {
     font-size: 0.875rem;
     line-height: 1rem;
     font-weight: bold;
-    color: #666666;
+    color: $simpleText;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
 }
 
@@ -51,7 +53,7 @@ body {
         padding-top: 2.5vh;
       }
     .card_description {
-        color: #666666;
+        color: $simpleText;
         font-family: $font;
     }
     .card_name {
@@ -99,6 +101,12 @@ body {
         border-color: $selected;
         .card_weight {
             background-color: $selected;
+        }
+        &.selected:hover {
+            border-color: $selectedHovered;
+            .card_weight {
+                background-color: $selectedHovered;
+            }
         }
 }
     &.disabled {
