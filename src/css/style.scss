@@ -79,7 +79,7 @@ body {
             top: 20px;
         }
     }
-    .card_portions, .card_mice {
+    .card_portions, .card_mice, .card_satisfaction {
         @extend %micePortions
     }
     .cat {
@@ -104,8 +104,32 @@ body {
     &.disabled {
         filter: contrast(25%);
         border-color: #7c7c7c;
+        .card_weight {
+            background-color: $disabled;
+        }
         .cat {
             top: 3.3vh;
+        }
+    }
+}
+
+.undercard {
+    position: relative;
+    top: 1rem;
+    font-family: $font;
+    font-size: .8125em;
+    line-height: 1rem;
+    color: #fff;
+    text-align: center;
+    filter: drop-shadow(0px 1px 0.5px #000000);
+    .buy {
+        color: #1C98DB;
+        display: inline-block;
+        cursor: pointer;
+        border-bottom: 1px dashed #1C98DB;
+        &:hover {
+            color: #2E9DD9;
+            border-color: #2E9DD9
         }
     }
 }
