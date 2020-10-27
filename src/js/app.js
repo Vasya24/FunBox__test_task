@@ -43,7 +43,7 @@ let buys = Array.from(document.getElementsByClassName('buy'));
 for (let j=0; j<buys.length; j++) {
     let card = buys[j].parentNode.parentElement.children[0]
     buys[j].addEventListener('click', () => {
-    card.classList.toggle('selected');
+    card.classList.add('selected');
     if (card.classList.contains('selected') && card.classList.contains('foie-gras') && card.classList.contains('disabled') == false) {
       card.parentElement.childNodes[3].innerHTML = 'Печень утки разварная с артишоками';
     } else if (card.classList.contains('selected') && card.classList.contains('fish') && card.classList.contains('disabled') == false) {

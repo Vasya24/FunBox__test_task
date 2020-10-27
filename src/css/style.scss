@@ -37,13 +37,17 @@ body {
     justify-content: space-evenly;
     padding: auto;
     align-self: center;
+    @media (max-width: 768px) {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 }
 
 .card {
     box-sizing: border-box;
     border: .25em solid $borderDefault;
-    inline-size: 22.22vw;
-    block-size: 60.53vh;
+    width: 22.22vw;
+    height: 60.53vh;
     background-color: #fff;
     overflow: hidden;  
     .card_textbox {
@@ -55,12 +59,18 @@ body {
     .card_description {
         color: $simpleText;
         font-family: $font;
+        @media (max-width: 1199px) {
+            font-size: .7rem
+        }
     }
     .card_name {
         font-family: $font;
         font-size: 3rem;
         font-weight: bold;
         color: #000;
+        @media (max-width: 1199px) {
+            font-size: 1.5rem;
+        }
     }
     .card_name__flavour {
         font-size: 1.5rem;
@@ -119,6 +129,7 @@ body {
             top: 3.3vh;
         }
     }
+
 }
 
 .undercard {
@@ -139,5 +150,8 @@ body {
             color: #2E9DD9;
             border-color: #2E9DD9
         }
+    }
+    @media (max-width: 1199px) {
+        font-size: .55rem;
     }
 }
